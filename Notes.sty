@@ -1,0 +1,66 @@
+\RequirePackage[a4paper, left=1.85cm, right=1.85cm, top=1.85cm, bottom=1.85cm]{geometry}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0cm}
+
+\RequirePackage{amsmath}
+\RequirePackage{kpfonts,baskervald} %baskerville font
+\RequirePackage[none]{hyphenat} %removes hyphenation at end of lines
+\RequirePackage{caption}
+\RequirePackage{graphics,graphicx,epsfig,ulem} % Makes sure all graphics works
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\RequirePackage{fixltx2e} % Subscript Outside of Equations
+\RequirePackage{textgreek} % Greek Text Outside of Equations
+\RequirePackage{amssymb}
+\RequirePackage{multicol}
+\RequirePackage{float}
+\RequirePackage{enumitem}
+\RequirePackage{color, soul}
+\RequirePackage{gensymb}
+\RequirePackage{sidecap}
+\RequirePackage{cancel}
+\RequirePackage[table]{xcolor}
+\setlist[itemize]{noitemsep, topsep=-8pt}
+\setlist[enumerate]{noitemsep, topsep=-8pt}
+\sidecaptionvpos{figure}{c}
+
+\RequirePackage{color}   %May be necessary if you want to color links
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\captionsetup{labelformat=empty}
+\RequirePackage{titlesec}
+    \titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+    \titlespacing\subsection{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+    \titleformat{\section}{\fontsize{11}{15}\normalfont\scshape}{}{1em}{\uline}
+    \titleformat{\subsection}{\fontsize{10}{15}\bfseries\scshape}{\thesubsection}{1em}{}
+    \titlespacing\chapter{0pt}{2pt plus 2pt minus 2pt}{2pt plus 2pt minus 2pt}
+
+
+\RequirePackage{fancyhdr} %headings stuff
+\RequirePackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents{section}% <section-type>
+    [0pt]% <left>
+    {}% <above-code>
+    {}% <numbered-entry-format>
+    {}% <numberless-entry-format>
+    {\dotfill\contentspage}% <filler-page-format>
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\l@chapter}
+{\hfill}
+{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill}
+{}{}
+\makeatother
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\pagestyle{fancy}  % header
+\renewcommand{\headrulewidth}{0pt}
+\rhead{}
+\lhead{}
