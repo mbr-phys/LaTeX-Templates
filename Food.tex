@@ -1,25 +1,25 @@
-\documentclass{article}
+\documentclass{standalone}
 \usepackage[table]{xcolor}
-
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 \begin{document}
 
-\begin{table}
-    \begin{tabular}{|c|c|}
+
+    \begin{tabular}{|c|c|c|}
         \hline
-        \rowcolor{red} Account No. &  \\
+        \rowcolor{red} \multicolumn{2}{|c|}{Account No.} &   \\
         \hline
-        \rowcolor{red} Sort Code &  \\
+        \rowcolor{red} \multicolumn{2}{|c|}{Sort Code} &  \\
         \hline
-        \rowcolor{lightgray} Person & Money Due \\
+        \rowcolor{lightgray} Person & Money Due & Paid \\
         \hline
-         &  \\
-         &  \\
-         &  \\
-         &  \\
-         &  \\
+         &  & \\
+         &  & \\
+         &  & \checkmark \\
+         &  & \checkmark \\
+         &  & \checkmark \\
         \hline
     \end{tabular}
-\end{table}
 
 \end{document}
