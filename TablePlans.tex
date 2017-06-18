@@ -1,0 +1,30 @@
+\documentclass[crop]{standalone}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tikz}
+\def\tk{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\begin{document}
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{red} \multicolumn{2}{|c|}{End of Exams Formal} \\
+        \hline
+        \multirow{8}{*}{Table 1} & Matthew Rossetter    \\
+                                 & Prudence Vary        \\
+                                 & Anna Gilliland       \\
+                                 & Balraj Singh         \\
+                                 & Francesca Fiorentini \\
+                                 & Samuel Tribe         \\
+                                 & Vankshita Mishra     \\
+                                 & Jacob Ellis \\
+        \hline
+        \multirow{5}{*}{Table 2} & Havi Thakral       \\
+                                 & Hannah Hartley     \\
+                                 & Lucy Snell         \\
+                                 & Harriet Dennington \\
+                                 & Helen Paton        \\
+                                 & Sadie Harriot      \\
+        \hline
+    \end{tabular}
+\end{document}

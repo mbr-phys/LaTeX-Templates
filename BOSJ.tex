@@ -1,0 +1,58 @@
+\documentclass[crop]{standalone}
+\usepackage[table]{xcolor}
+\usepackage{slashbox}
+
+\usepackage{xcolor}
+\pagecolor[rgb]{0.2,0.2,0.2}
+\color[rgb]{1,1,1}
+
+\usepackage{tikz}
+\def\tk{\tikz\fill[scale=0.6](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\begin{document}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \cellcolor{red} Group A & Liger & Ricochet & Lee & Ospreay & Scurll & Taichi & TAKA & Hiromu & \cellcolor{red} Total \\
+    \hline
+    Jushin Thunder Liger & \backslashbox{-}{-} & X & X & X & X & \tk & X & X & \cellcolor{red} 2 \\
+    \hline
+    Ricochet & \tk & \backslashbox{-}{-} & X & X & X & \tk & \tk & \tk & \cellcolor{red} 8 \\
+    \hline
+    Dragon Lee & \tk & \tk & \backslashbox{-}{-} & X & \tk &
+    X & X & \tk & \cellcolor{red} 8 \\
+    \hline
+    \rowcolor{yellow} Will Ospreay & \tk & \tk & \tk & \backslashbox{-}{-} & X & X & \tk & \tk & \cellcolor{red} 10 \\
+    \hline
+    Marty Scurll & \tk & \tk & X & \tk & \backslashbox{-}{-} & X & \tk & X & \cellcolor{red} 8 \\
+    \hline
+    Taichi & X & X & \tk & \tk & \tk & \backslashbox{-}{-} & \tk & X & \cellcolor{red} 8 \\
+    \hline
+    TAKA Michinoku & \tk & X & \tk & X & X & X & \backslashbox{-}{-} & X & \cellcolor{red} 4 \\
+    \hline
+    Hiromu Takahashi & \tk & X & X & & \tk & \tk & \tk & \backslashbox{-}{-} & \cellcolor{red} 8 \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \hline\hline
+    \cellcolor{blue} Group B & Tiger & Taguchi & KUSHIDA & Volador & ACH & Kanemaru & Desperado & BUSHI & \cellcolor{blue} Total \\
+    \hline
+    Tiger Mask \RN{4} & \backslashbox{-}{-} & X & \tk & X & \tk & X & \tk & & \cellcolor{blue} 6 \\
+    \hline
+    Ryusuke Taguchi & \tk & \backslashbox{-}{-} & X & \tk & & \tk & X & X & \cellcolor{blue} 6 \\
+    \hline
+    KUSHIDA & X & \tk & \backslashbox{-}{-} & & X & \tk & X & \tk & \cellcolor{blue} 6 \\
+    \hline
+    Volador Jr. & \tk & X & & \backslashbox{-}{-} & \tk & X & \tk & X & \cellcolor{blue} 6 \\
+    \hline
+    ACH & X & & \tk & X & \backslashbox{-}{-} & X & \tk & \tk & \cellcolor{blue} 6 \\
+    \hline
+    Yoshinobu Kanemaru & \tk & X & X & \tk & \tk & \backslashbox{-}{-} & & X & \cellcolor{blue} 6 \\
+    \hline
+    El Desperado & X & \tk & \tk & X & X & & \backslashbox{-}{-} & \tk & \cellcolor{blue} 6 \\
+    \hline
+    BUSHI & & \tk & X & \tk & X & \tk & X & \backslashbox{-}{-} & \cellcolor{blue} 6 \\
+    \hline
+\end{tabular}
+\end{document}
