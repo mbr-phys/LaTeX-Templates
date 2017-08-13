@@ -1,0 +1,115 @@
+\documentclass[landscape]{article}
+\usepackage[table]{xcolor}
+\usepackage{slashbox}
+\usepackage{tabu}
+\usepackage{lscape}
+\usepackage[landscape, margin=0.1in]{geometry}
+\usepackage[none]{hyphenat} % Stops end-of-row hyphenation
+\usepackage{multicol}
+\usepackage{cancel}
+
+\usepackage{xcolor}
+\pagecolor[rgb]{0.2,0.2,0.2}
+\color[rgb]{1,1,1}
+
+\usepackage{tikz}
+\def\tk{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\begin{document}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \rowcolor{red} Group A & \shortstack{Bad Luck \\ Fale} & \shortstack{Hirooki \\ Goto} & \shortstack{Kota \\ Ibushi} & \shortstack{Tomohiro \\ Ishii} & \shortstack{Togi \\ Makabe} & \shortstack{Yuji \\ Nagata} & \shortstack{Tetsuya \\ Naito} & \shortstack{Zack \\ Sabre Jr.} & \shortstack{Hiroshi \\ Tanahashi} & \shortstack{Yoshi \\ Hashi} & \cellcolor{red} Total \\
+    \hline
+    Fale & \cellcolor{black} & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{red} 10 $|$ 12 \\
+    \hline
+    Goto & X $|$ X & \cellcolor{black} & \tk $|$ \tk & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & \tk $|$ \tk & \cellcolor{red} 12 $|$ 10 \\
+    \hline
+    Ibushi & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{black} & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \cellcolor{red} 10 $|$ 10 \\
+    \hline
+    Ishii & \cellcolor{gray} \tk $|$ X & X $|$ X & X $|$ X & \cellcolor{black} & \tk $|$ \tk & \tk $|$ \tk & \tk $|$ \tk & X $|$ X & X $|$ X & \tk $|$ \tk & \cellcolor{red} 10 $|$ 8 \\
+    \hline
+    Makabe & X $|$ X & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & X $|$ X & \cellcolor{black} & \tk $|$ \tk & X $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \cellcolor{red} 6 $|$ 8 \\
+    \hline
+    Nagata & X $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & X $|$ X & X $|$ X & \cellcolor{black} & X $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{red} 4 $|$ 2 \\
+    \hline
+    \cellcolor{magenta} Naito & \cellcolor{gray} \tk $|$ X & \tk $|$ \tk & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{black} & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \cellcolor{red} 14 $|$ 14 \\
+    \hline
+    ZSJ & \cellcolor{gray} X $|$ \tk & X $|$ X & X $|$ X & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{black} & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{red} 8 $|$ 10 \\
+    \hline
+    Tanahashi & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} \tk $|$ X & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{black} & \tk $|$ \tk & \cellcolor{red} 12 $|$ 12 \\
+    \hline
+    Yoshi & \cellcolor{gray} X $|$ \tk & X $|$ X & X $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{black} & \cellcolor{red} 4 $|$ 4 \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \hline\hline
+    \rowcolor{blue} Group B & \shortstack{Michael \\ Elgin} & EVIL & \shortstack{Satoshi \\ Kojima} & \shortstack{Kazuchika \\ Okada} & \shortstack{Kenny \\ Omega} & \shortstack{Juice \\ Robinson} & Sanada & \shortstack{Minoru \\ Suzuki} & \shortstack{Tama \\ Tonga} & \shortstack{Toru \\ Yano} & \cellcolor{blue} Total \\
+    \hline
+    Elgin & \cellcolor{black} & \tk $|$ \tk & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{blue} 10 $|$ 8 \\
+    \hline
+    EVIL & X $|$ X & \cellcolor{black} & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{blue} 8 $|$ 12 \\
+    \hline
+    Kojima & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{black} & X $|$ X & X $|$ X & X $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{blue} 4 $|$ 2 \\
+    \hline
+    Okada & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & \cellcolor{black} & \cellcolor{gray} = $|$ X & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} \tk $|$ = & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{blue} 13 $|$ 13 \\
+    \hline
+    \cellcolor{cyan} Omega & X $|$ X & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{gray} = $|$ \tk & \cellcolor{black} & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{blue} 13 $|$ 14 \\
+    \hline
+    Juice & \cellcolor{gray} X $|$ \tk & X $|$ X & \tk $|$ \tk & X $|$ X & \cellcolor{gray} X $|$ \tk & \cellcolor{black} & \cellcolor{gray} \tk $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \cellcolor{blue} 6 $|$ 8 \\
+    \hline
+    Sanada & \tk $|$ \tk & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \cellcolor{black} & X $|$ X & X $|$ X & \cellcolor{gray} X $|$ \tk & \cellcolor{blue} 8 $|$ 8 \\
+    \hline
+    \cellcolor{cyan} \cancel{Suzuki} & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} \tk $|$ X & \tk $|$ \tk & \cellcolor{gray} X $|$ = & X $|$ X & \tk $|$ \tk & \tk $|$ \tk & \cellcolor{black} & \tk $|$ \tk & \cellcolor{gray} \tk $|$ X & \cellcolor{blue} 14 $|$ 9 \\
+    \hline
+    Tonga & \tk $|$ \tk & X $|$ X & \tk $|$ \tk & X $|$ X & X $|$ X & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & X $|$ X& \cellcolor{black} & X $|$ X & \cellcolor{blue} 6 $|$ 8 \\
+    \hline
+    Yano & \cellcolor{gray} X $|$ \tk & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & X $|$ X & X $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} \tk $|$ X & \cellcolor{gray} X $|$ \tk & \tk $|$ \tk & \cellcolor{black} & \cellcolor{blue} 8 $|$ 8 \\
+    \hline
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+  \hline
+  \multicolumn{4}{|c|}{\cellcolor{red} Group A} & \multicolumn{4}{|c|}{\cellcolor{blue} Group B} \\
+  \hline
+  Tetsuya Naito & 14 & Tetsuya Naito & 14 & Minoru Suzuki & 14 & Kenny Omega & 14 \\
+  \hline
+  Hiroshi Tanahashi & 12 & Hiroshi Tanahashi & 12 & Kazuchika Okada & 13 & Kazuchika Okada & 13 \\
+  \hline
+  Hirooki Goto & 12 & Bad Luck Fale & 12 & Kenny Omega & 13 & EVIL & 12 \\
+  \hline
+  Kota Ibushi & 10 & Kota Ibushi & 10 & Michael Elgin & 10 & Minoru Suzuki & 9 \\
+  \hline
+  Tomohiro Ishii & 10 & Hirooki Goto & 10 & EVIL & 8 & Michael Elgin & 8 \\
+  \hline
+  Bad Luck Fale & 10 & Zack Sabre Jr. & 10 & Sanada & 8 & Sanada & 8 \\
+  \hline
+  Zack Sabre Jr. & 8 & Tomohiro Ishii & 8 & Toru Yano & 8 & Toru Yano & 8 \\
+  \hline
+  Togi Makabe & 6 & Togi Makabe & 8 & Tama Tonga & 6 & Tama Tonga & 8 \\
+  \hline
+  Yoshi-Hashi & 4 & Yoshi-Hashi & 4 & Juice Robinson & 6 & Juice Robinson & 8 \\
+  \hline
+  Yuji Nagata & 4 & Yuji Nagata & 2 & Satoshi Kojima & 4 & Satoshi Kojima & 2 \\
+  \hline\hline
+  \multicolumn{4}{|c|}{\cellcolor{magenta} Group A Winner} &  \multicolumn{4}{|c|}{\cellcolor{cyan} Group B Winner} \\
+  \hline
+  \multicolumn{2}{|c|}{Tetsuya Naito} & \multicolumn{2}{|c|}{Tetsuya Naito} & \multicolumn{2}{|c|}{Minoru Suzuki} & \multicolumn{2}{|c|}{Kenny Omega} \\
+  \hline
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{|c|c|}
+  \hline
+  \multicolumn{2}{|c|}{\cellcolor{orange} Winner} \\
+  \hline
+  Tetsuya Naito & Tetsuya Naito \\
+  \hline
+\end{tabular}
+
+\vspace{10pt}
+\textit{*left handside for predictions, right for results}
+\end{document}
