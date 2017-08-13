@@ -1,58 +1,101 @@
-\documentclass[crop]{standalone}
+\documentclass[landscape]{article}
 \usepackage[table]{xcolor}
 \usepackage{slashbox}
+\usepackage{tabu}
+\usepackage{lscape}
+\usepackage[landscape, margin=0.1in]{geometry}
+\usepackage[none]{hyphenat} % Stops end-of-row hyphenation
+\usepackage{multicol}
 
 \usepackage{xcolor}
 \pagecolor[rgb]{0.2,0.2,0.2}
 \color[rgb]{1,1,1}
 
 \usepackage{tikz}
-\def\tk{\tikz\fill[scale=0.6](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\tk{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 \newcommand{\RN}[1]{%
   \textup{\uppercase\expandafter{\romannumeral#1}}%
 }
 
+
 \begin{document}
+\centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
     \hline
-    \cellcolor{red} Group A & Liger & Ricochet & Lee & Ospreay & Scurll & Taichi & TAKA & Hiromu & \cellcolor{red} Total \\
+    \rowcolor{red} Group A & \shortstack{Jushin \\ Thunder Liger} & Ricochet & \shortstack{Dragon \\ Lee} & \shortstack{ Will \\ Ospreay} & \shortstack{Marty \\ Scurll} & Taichi & \shortstack{TAKA \\ Michinoku} & \shortstack{Hiromu \\ Takahashi} & \cellcolor{red} Total \\
     \hline
-    Jushin Thunder Liger & \backslashbox{-}{-} & X & X & X & X & \tk & X & X & \cellcolor{red} 2 \\
+    Liger & \cellcolor{black} & X & X & X & X & \tk & X & X & \cellcolor{red} 2 \\
     \hline
-    Ricochet & \tk & \backslashbox{-}{-} & X & X & X & \tk & \tk & \tk & \cellcolor{red} 8 \\
+    Ricochet & \tk & \cellcolor{black} & X & X & X & \tk & \tk & \tk & \cellcolor{red} 8 \\
     \hline
-    Dragon Lee & \tk & \tk & \backslashbox{-}{-} & X & \tk &
+    Lee & \tk & \tk & \cellcolor{black} & X & \tk &
     X & X & \tk & \cellcolor{red} 8 \\
     \hline
-    \rowcolor{yellow} Will Ospreay & \tk & \tk & \tk & \backslashbox{-}{-} & X & X & \tk & \tk & \cellcolor{red} 10 \\
+    \cellcolor{cyan} Ospreay & \tk & \tk & \tk & \cellcolor{black} & X & X & \tk & \tk & \cellcolor{red} 10 \\
     \hline
-    Marty Scurll & \tk & \tk & X & \tk & \backslashbox{-}{-} & X & \tk & X & \cellcolor{red} 8 \\
+    Scurll & \tk & \tk & X & \tk & \cellcolor{black} & X & \tk & X & \cellcolor{red} 8 \\
     \hline
-    Taichi & X & X & \tk & \tk & \tk & \backslashbox{-}{-} & \tk & X & \cellcolor{red} 8 \\
+    Taichi & X & X & \tk & \tk & \tk & \cellcolor{black} & \tk & X & \cellcolor{red} 8 \\
     \hline
-    TAKA Michinoku & \tk & X & \tk & X & X & X & \backslashbox{-}{-} & X & \cellcolor{red} 4 \\
+    TAKA & \tk & X & \tk & X & X & X & \cellcolor{black} & X & \cellcolor{red} 4 \\
     \hline
-    Hiromu Takahashi & \tk & X & X & & \tk & \tk & \tk & \backslashbox{-}{-} & \cellcolor{red} 8 \\
+    Takahashi & \tk & X & X & & \tk & \tk & \tk & \cellcolor{black} & \cellcolor{red} 8 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \hline\hline
-    \cellcolor{blue} Group B & Tiger & Taguchi & KUSHIDA & Volador & ACH & Kanemaru & Desperado & BUSHI & \cellcolor{blue} Total \\
+    \rowcolor{blue} Group B & \shortstack{Tiger \\ Mask \RN{4}} & \shortstack{Ryusuke \\ Taguchi} & KUSHIDA & \shortstack{Volador \\ Jr.} & ACH & \shortstack{Yoshinobu \\ Kanemaru} & \shortstack{El \\ Desperado} & BUSHI & \cellcolor{blue} Total \\
     \hline
-    Tiger Mask \RN{4} & \backslashbox{-}{-} & X & \tk & X & \tk & X & \tk & & \cellcolor{blue} 6 \\
+    Tiger & \cellcolor{black} & X & \tk & X & \tk & X & \tk & X & \cellcolor{blue} 6 \\
     \hline
-    Ryusuke Taguchi & \tk & \backslashbox{-}{-} & X & \tk & & \tk & X & X & \cellcolor{blue} 6 \\
+    Taguchi & \tk & \cellcolor{black} & X & \tk & \tk & \tk & X & X & \cellcolor{blue} 8 \\
     \hline
-    KUSHIDA & X & \tk & \backslashbox{-}{-} & & X & \tk & X & \tk & \cellcolor{blue} 6 \\
+    \cellcolor{magenta} KUSHIDA & X & \tk & \cellcolor{black} & \tk & X & \tk & X & \tk & \cellcolor{blue} 8 \\
     \hline
-    Volador Jr. & \tk & X & & \backslashbox{-}{-} & \tk & X & \tk & X & \cellcolor{blue} 6 \\
+    Volador & \tk & X & X & \cellcolor{black} & \tk & X & \tk & X & \cellcolor{blue} 6 \\
     \hline
-    ACH & X & & \tk & X & \backslashbox{-}{-} & X & \tk & \tk & \cellcolor{blue} 6 \\
+    ACH & X & X & \tk & X & \cellcolor{black} & X & \tk & \tk & \cellcolor{blue} 6 \\
     \hline
-    Yoshinobu Kanemaru & \tk & X & X & \tk & \tk & \backslashbox{-}{-} & & X & \cellcolor{blue} 6 \\
+    Kanemaru & \tk & X & X & \tk & \tk & \cellcolor{black} & \tk & X & \cellcolor{blue} 8 \\
     \hline
-    El Desperado & X & \tk & \tk & X & X & & \backslashbox{-}{-} & \tk & \cellcolor{blue} 6 \\
+    Desperado & X & \tk & \tk & X & X & X & \cellcolor{black} & \tk & \cellcolor{blue} 6 \\
     \hline
-    BUSHI & & \tk & X & \tk & X & \tk & X & \backslashbox{-}{-} & \cellcolor{blue} 6 \\
+    BUSHI & \tk & \tk & X & \tk & X & \tk & X & \cellcolor{black} & \cellcolor{blue} 8 \\
     \hline
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  \multicolumn{2}{|c|}{\cellcolor{red} Group A} & \multicolumn{2}{|c|}{\cellcolor{blue} Group B} \\
+  \hline
+  Will Ospreay & 10 & KUSHIDA & 8 \\
+  \hline
+  Dragon Lee & 8 & BUSHI & 8 \\
+  \hline
+  Hiromu Takahashi & 8 & Ryusuke Taguchi & 8 \\
+  \hline
+  Ricochet & 8 & Yoshinobu Kanemaru & 8 \\
+  \hline
+  Taichi & 8 & Volador Jr. & 6 \\
+  \hline
+  Marty Scurll & 8 & Tiger Mask \RN{4} & 6 \\
+  \hline
+  TAKA Michinoku & 4 & ACH & 6 \\
+  \hline
+  Jushin Thunder Liger & 2 & El Desperado & 6 \\
+  \hline\hline
+  \multicolumn{2}{|c|}{\cellcolor{magenta} Group A Winner} &  \multicolumn{2}{|c|}{\cellcolor{cyan} Group B Winner} \\
+  \hline
+  \multicolumn{2}{|c|}{Will Ospreay} & \multicolumn{2}{|c|}{KUSHIDA} \\
+  \hline
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{|c|}
+  \hline
+  \cellcolor{orange} Winner \\
+  \hline
+  KUSHIDA \\
+  \hline
 \end{tabular}
 \end{document}
