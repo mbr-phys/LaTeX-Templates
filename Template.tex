@@ -1,42 +1,36 @@
-%%%%% Document Setup %%%%%%%%
+\documentclass[10pt, twocolumn, nobalancelastpage]{article}
 
-\documentclass[10pt, twocolumn, nobalancelastpage]{article}    % Font size (10,11 or 12pt) and column number (one or two).
+\usepackage{labreportstyle}
 
-\usepackage{../labreportstyle}
-
-\rhead{}            % Your report title
+\rhead{}            % report title
 \title{}
-\author{M. Rossetter (and ) \\  L1 Discovery Labs, Lab Group D, Thursday}
+\author{M. Rossetter (and ) \\  L2 Discovery Labs, Room 228, Tuesday}
 \date{\vspace{-0.30cm}Submitted: \today{}; Date of Experiment: /2017\vspace{-0.7cm}}
 
-%%%%% Document %%%%%
 \begin{document}
-	\twocolumn[
-	\maketitle % need full-width title
-	\begin{onecolabstract}
+\twocolumn[
+\maketitle
+\begin{onecolabstract}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{onecolabstract}]
+\thispagestyle{plain}
 
-	\end{onecolabstract}
-	]
-	\thispagestyle{plain} % produces page number for front page
+\section{Introduction}
 
+\section{Methods}
 
+\section{Results}
 
-	\section{Introduction}
+\section{Discussion}
 
-	\section{Methods}
+\section{Conclusions}
 
-	\section{Results}
+\begin{thebibliography}{}
+%\bibitem{ref01} A. N. Other, Title of the Book, edition, publishers, place of publication (year of publication), p. 123.   % example reference
 
-	\section{Discussion}
+\end{thebibliography}
 
-	\section{Conclusions}
-
-	\begin{thebibliography}{}
-	%\bibitem{ref01} A. N. Other, Title of the Book, edition, publishers, place of publication (year of publication), p. 123.   % example reference
-
-	\end{thebibliography}
-
-	\newpage
-	\section{Error Appendix}
+\newpage
+\section{Error Appendix}
 
 \end{document}

@@ -14,14 +14,16 @@
 \RequirePackage{amssymb}
 \RequirePackage{multicol}
 \RequirePackage{float}
+\RequirePackage{multicol, multirow}
 \RequirePackage{enumitem}
 \RequirePackage{color, soul}
 \RequirePackage{gensymb}
 \RequirePackage{sidecap}
 \RequirePackage{cancel}
+\RequirePackage{wrapfig}
 \RequirePackage[table]{xcolor}
 \setlist[itemize]{noitemsep, topsep=-8pt}
-\setlist[enumerate]{noitemsep, topsep=-8pt}
+\setlist[enumerate]{topsep=-8pt}
 \sidecaptionvpos{figure}{c}
 
 \RequirePackage{color}   %May be necessary if you want to color links
@@ -36,8 +38,7 @@
 \RequirePackage{titlesec}
     \titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
     \titlespacing\subsection{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
-    \titleformat{\section}{\fontsize{11}{15}\normalfont\scshape}{}{1em}{\uline}
-    \titleformat{\subsection}{\fontsize{10}{15}\bfseries\scshape}{\thesubsection}{1em}{}
+    \titleformat{\section}{\fontsize{11}{15}\normalfont\scshape}{\thesection}{1em}{\uline}
     \titlespacing\chapter{0pt}{2pt plus 2pt minus 2pt}{2pt plus 2pt minus 2pt}
 
 
@@ -50,6 +51,8 @@
     {}% <numberless-entry-format>
     {\dotfill\contentspage}% <filler-page-format>
 \RequirePackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
 \makeatletter
 \patchcmd{\l@chapter}
 {\hfill}
