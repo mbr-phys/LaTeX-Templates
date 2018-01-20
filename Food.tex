@@ -1,24 +1,24 @@
 \documentclass{standalone}
 \usepackage[table]{xcolor}
 \usepackage{tikz}
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\tk{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 \begin{document}
 
 
     \begin{tabular}{|c|c|c|}
         \hline
-        \rowcolor{red} \multicolumn{2}{|c|}{Account No.} &   \\
+        % \rowcolor{red} \multicolumn{2}{|c|}{Account No.} &   \\
+        % \hline
+        % \rowcolor{red} \multicolumn{2}{|c|}{Sort Code} &  \\
+        % \hline
+        \rowcolor{red} Person & Money Due & Paid \\
         \hline
-        \rowcolor{red} \multicolumn{2}{|c|}{Sort Code} &  \\
-        \hline
-        \rowcolor{lightgray} Person & Money Due & Paid \\
-        \hline
-         &  & \\
-         &  & \\
-         &  & \checkmark \\
-         &  & \checkmark \\
-         &  & \checkmark \\
+        Helen & £1.50 & X \\
+        Caitlin & £1.00 & X \\
+        Lewis & £2.00 & X \\
+         % &  & \tk \\
+         % &  & \tk \\
         \hline
     \end{tabular}
 
