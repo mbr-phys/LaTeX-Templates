@@ -6,7 +6,7 @@
 \RequirePackage{kpfonts,baskervald} %baskerville font
 \RequirePackage[none]{hyphenat} %removes hyphenation at end of lines
 \RequirePackage{caption}
-\RequirePackage{graphics,graphicx,epsfig,ulem} % Makes sure all graphics works
+\RequirePackage{graphics,graphicx,epsfig,ulem, booktabs} % Makes sure all graphics works
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{fixltx2e} % Subscript Outside of Equations
@@ -75,7 +75,7 @@
 
 \NewDocumentEnvironment{example}{ O{} }
 {
-\colorlet{colexam}{red!55!black} % Global example color
+\colorlet{colexam}{blue!55!black} % Global example color
 \newtcolorbox[use counter=example]{examplebox}{%
     % Example Frame Start
     empty,% Empty previously set parameters
