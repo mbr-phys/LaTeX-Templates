@@ -31,7 +31,7 @@
 \hypersetup{
     colorlinks=true, %set true if you want colored links
     linktoc=all,     %set to all if you want both sections and subsections linked
-    linkcolor=blue,  %choose some color if you want links to stand out
+    linkcolor=black,  %choose some color if you want links to stand out
 }
 
 \captionsetup{labelformat=empty}
@@ -44,12 +44,6 @@
 
 \RequirePackage{fancyhdr} %headings stuff
 \RequirePackage{titletoc}% http://ctan.org/pkg/titletoc
-\titlecontents{section}% <section-type>
-    [8pt]% <left>
-    {}% <above-code>
-    {}% <numbered-entry-format>
-    {}% <numberless-entry-format>
-    {\dotfill\contentspage}% <filler-page-format>
 \RequirePackage{etoolbox}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
@@ -100,6 +94,7 @@
     }
 \begin{examplebox}}
 {\end{examplebox}\endlist}
+
 
 \pagestyle{fancy}  % header
 \renewcommand{\headrulewidth}{0pt}
