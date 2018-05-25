@@ -12,89 +12,90 @@
 \color[rgb]{1,1,1}
 
 \usepackage{tikz}
-\def\tk{\tikz\fill[scale=0.5](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\tk{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 \newcommand{\RN}[1]{%
   \textup{\uppercase\expandafter{\romannumeral#1}}%
 }
 
+\newcommand\e{$|\;$}
 
 \begin{document}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
     \hline
-    \rowcolor{red} Group A & & & & & & & & & Total \\
+    \rowcolor{red} Group A & ACH & BUSHI & Flip & Ishimori & Tiger & Ospreay & YOH & Kanemaru & Total \\
     \hline
-    & \cellcolor{black} & & & & & & & & \cellcolor{red} \\
+    ACH & \cellcolor{black} & \tk \e & X \e \tk & X \e & X \e & X \e X & \tk \e & \tk \e & \cellcolor{red} 6 \e 2 \\
     \hline
-    & & \cellcolor{black} & & & & & & & \cellcolor{red} \\
+    BUSHI & X \e & \cellcolor{black} & X \e & X \e X & \tk \e & X \e & \tk \e X & X \e & \cellcolor{red} 4 \e 0 \\
     \hline
-    & & & \cellcolor{black} & & & & & & \cellcolor{red} \\
+    Flip Gordon & \tk \e X & \tk \e & \cellcolor{black} & X \e & \tk \e & \tk/- \e & X \e & X \e \tk & \cellcolor{red} 8/7 \e 2 \\
     \hline
-    & & & & \cellcolor{black} & & & & & \cellcolor{red} \\
+    Taiji Ishimori & \tk \e & \tk \e \tk & \tk \e & \cellcolor{black} & \tk \e & X \e \tk & \tk \e & \tk \e & \cellcolor{red} 12 \e 4 \\
     \hline
-    & & & & & \cellcolor{black} & & & & \cellcolor{red} \\
+    Tiger Mask \RN{4} & \tk \e & X \e & X \e & X \e & \cellcolor{black} & X \e & X \e \tk & \tk \e \tk & \cellcolor{red} 4 \e 4 \\
     \hline
-    & & & & & & \cellcolor{black} & & & \cellcolor{red} \\
+    Will Ospreay & \tk \e \tk & \tk \e & X/- \e & \tk \e X & \tk \e & \cellcolor{black} & X \e & \tk \e & \cellcolor{red} 10/11 \e 2 \\
     \hline
-    & & & & & & & \cellcolor{black} & & \cellcolor{red} \\
+    YOH & X \e & X \e \tk & \tk \e & X \e & \tk \e X & \tk \e & \cellcolor{black} & \tk \e & \cellcolor{red} 8 \e 2 \\
     \hline
-    & & & & & & & & \cellcolor{black} & \cellcolor{red} \\
+    Yoshinobu Kanemaru & X \e & \tk \e & \tk \e X & X \e & X \e X & X \e & X \e & \cellcolor{black} & \cellcolor{red} 4 \e 0 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \hline\hline
-    \rowcolor{blue} Group B & & & & & & & & & Total \\
+    \rowcolor{blue} Group B & Sabin & Dragon & Desperado & Takahashi & Kushida & Scurll & Taguchi & SHO & Total \\
     \hline
-    & \cellcolor{black} & & & & & & & & \cellcolor{blue} \\
+    Chris Sabin & \cellcolor{black} & \tk \e & X \e & X \e & X \e \tk & \tk \e & X \e & \tk \e X & \cellcolor{blue} 6 \e 2 \\
     \hline
-    & & \cellcolor{black} & & & & & & & \cellcolor{blue} \\
+    Dragon Lee & X \e & \cellcolor{black} & \tk \e & \tk \e & X \e & X \e & \tk \e \tk & X \e \tk & \cellcolor{blue} 6 \e 4 \\
     \hline
-    & & & \cellcolor{black} & & & & & & \cellcolor{blue} \\
+    El Desperado & \tk \e & X \e & \cellcolor{black} & X \e \tk & X \e & X \e & X \e \tk & \tk \e & \cellcolor{blue} 4 \e 4 \\
     \hline
-    & & & & \cellcolor{black} & & & & & \cellcolor{blue} \\
+    Hiromu Takahashi & \tk \e & X \e & \tk \e X & \cellcolor{black} & \tk \e & \tk \e \tk & \tk \e & X \e & \cellcolor{blue} 10 \e 2 \\
     \hline
-    & & & & & \cellcolor{black} & & & & \cellcolor{blue} \\
+    Kushida & \tk \e X & \tk \e & \tk \e & X \e & \cellcolor{black} & X \e \tk & \tk \e & \tk \e & \cellcolor{blue} 10 \e 2 \\
     \hline
-    & & & & & & \cellcolor{black} & & & \cellcolor{blue} \\
+    Marty Scurll & X \e & \tk \e & \tk \e & X \e X & \tk \e X & \cellcolor{black} & X \e & \tk \e & \cellcolor{blue} 8 \e 0 \\
     \hline
-    & & & & & & & \cellcolor{black} & & \cellcolor{blue} \\
+    Ryusuke Taguchi & \tk \e & X \e X & \tk \e X & X \e & X \e & \tk \e & \cellcolor{black} & X \e & \cellcolor{blue} 6 \e 0 \\
     \hline
-    & & & & & & & & \cellcolor{black} & \cellcolor{blue} \\
+    SHO & X \e \tk & \tk \e X & X \e & \tk \e & X \e & X \e & \tk \e & \cellcolor{black} & \cellcolor{blue} 6 \e 2 \\
     \hline
 \end{tabular}
 
 \vspace{10pt}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
   \hline
-  \multicolumn{2}{|c|}{\cellcolor{red} Group A} & \multicolumn{2}{|c|}{\cellcolor{blue} Group B} \\
+  \multicolumn{4}{|c|}{\cellcolor{red} Group A} & \multicolumn{4}{|c|}{\cellcolor{blue} Group B} \\
   \hline
-  & & & \\
+  Taiji Ishimori & 12 & Taiji Ishimori & 4 & Hiromu Takahashi & 10 & El Desperado & 4 \\
   \hline
-  & & & \\
+  Will Ospreay & 10/11 & Tiger Mask \RN{4} & 4 & Kushida & 10 & Dragon Lee & 4 \\
   \hline
-  & & & \\
+  YOH & 8 & Will Ospreay & 2 & Marty Scurll & 8 & Hiromu Takahashi & 2 \\
   \hline
-  & & & \\
+  Flip Gordon & 8/7 & YOH & 2 & Chris Sabin & 6 & Chris Sabin & 2 \\
   \hline
-  & & & \\
+  ACH & 6 & ACH & 2 & SHO & 6 & Kushida & 2 \\
   \hline
-  & & & \\
+  Tiger Mask \RN{4} & 4 & Flip Gordon & 2 & Dragon Lee & 6 & SHO & 2 \\
   \hline
-  & & & \\
+  BUSHI & 4 & BUSHI & 0 & Ryusuke Taguchi & 6 & Ryusuke Taguchi & 0 \\
   \hline
-  & & & \\
+  Yoshinobu Kanemaru & 4 & Yoshinobu Kanemaru & 0 & El Desperado & 4 & Marty Scurll & 0 \\
   \hline\hline
-  \multicolumn{2}{|c|}{\cellcolor{magenta} Group A Winner} &  \multicolumn{2}{|c|}{\cellcolor{cyan} Group B Winner} \\
+  \multicolumn{4}{|c|}{\cellcolor{magenta} Group A Winner} & \multicolumn{4}{|c|}{\cellcolor{cyan} Group B Winner} \\
   \hline
-  \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{} \\
+  \multicolumn{2}{|c|}{Taiji Ishimori} & \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{Hiromu Takahashi} & \multicolumn{2}{|c|}{} \\
   \hline
 \end{tabular}
 
 \vspace{10pt}
-\begin{tabular}{|c|}
+\begin{tabular}{|c|c|}
   \hline
-  \cellcolor{orange} Winner \\
+  \multicolumn{2}{|c|}{\cellcolor{orange} Winner} \\
   \hline
-  \\
+  Hiromu Takahashi & \\
   \hline
 \end{tabular}
 \end{document}
