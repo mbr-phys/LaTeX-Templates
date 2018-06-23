@@ -8,10 +8,10 @@
 
 * Template and labreportstyle for lab reports
 
-* BOSJ and G1ClimaxPredictions for wrestling tournament charts
+* BOSJ and G1ClimaxPredictions for tournament charts
 
 * other sty files not included with TeX install
 
-* Food and TablePlans are useful extras for uni
+* Food and TablePlans are useful extras for uni friends
 
 * GitPushing is a useful reminder

@@ -1,20 +1,23 @@
 \documentclass{standalone}
-\usepackage[table]{xcolor}
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage{txfonts}
 \usepackage{tikz}
 \def\tk{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 \begin{document}
 \begin{tabular}{|c|c|c|}
     \hline
-    \rowcolor{red} \multicolumn{2}{|c|}{Account No.} & \\
+    \rowcolor{Aquamarine} \multicolumn{2}{|c|}{Account No.} & 63763611 \\
     \hline
-    \rowcolor{red} \multicolumn{2}{|c|}{Sort Code} & \\
+    \rowcolor{Aquamarine} \multicolumn{2}{|c|}{Sort Code} & 09-01-28 \\
     \hline
-    \rowcolor{red} Person & Money Due & Paid? \\
+    \rowcolor{Aquamarine} Person & Money Due & Paid? \\
     \hline
-    Jack & £6   & \tk \\
-    Jill & £7   & \tk \\
-    Pru  & £100 & X   \\
+    Aigerim  & £8.45  & X   \\
+    Kraken   & £8.45  & X   \\
+    Ed       & £7.45  & X   \\
+    Tullia   & £4.50  & X   \\
+    Laura Y  & £10.45 & X   \\
     \hline
 \end{tabular}
 \end{document}
