@@ -2,17 +2,14 @@
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0cm}
 
-\RequirePackage{amsmath, mathtools}
+\RequirePackage{amsmath, mathtools, siunitx}
 \RequirePackage{kpfonts,baskervald} %baskerville font
 \RequirePackage[none]{hyphenat} %removes hyphenation at end of lines
 \RequirePackage{caption}
-\RequirePackage{graphics,graphicx,epsfig,ulem, booktabs} % Makes sure all graphics works
-\RequirePackage{caption}
 \RequirePackage{subcaption}
-\RequirePackage{fixltx2e} % Subscript Outside of Equations
-\RequirePackage{textgreek} % Greek Text Outside of Equations
+\RequirePackage{graphics,graphicx,epsfig,ulem, booktabs} % Makes sure all graphics works
+%\RequirePackage{textgreek} % Greek Text Outside of Equations
 \RequirePackage{amssymb}
-\RequirePackage{multicol}
 \RequirePackage{float}
 \RequirePackage{multicol, multirow}
 \RequirePackage{enumitem}
@@ -22,6 +19,10 @@
 \RequirePackage{cancel}
 \RequirePackage{wrapfig}
 \RequirePackage[table]{xcolor}
+\RequirePackage{pifont}
+\renewcommand{\labelitemi}{\ding{228}}
+\renewcommand{\labelitemii}{\ding{229}}
+\renewcommand{\labelitemiii}{\ding{225}}
 \setlist[itemize]{noitemsep, topsep=-8pt}
 \setlist[enumerate]{topsep=-8pt}
 \sidecaptionvpos{figure}{c}
@@ -46,6 +47,17 @@
 \RequirePackage{titletoc}% http://ctan.org/pkg/titletoc
 \RequirePackage{etoolbox}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% \titlecontents{chapter}% <section-type>
+%     [0pt]% <left>
+%     {}% <above-code>
+%     {Lecture \thecontentslabel\quad}% <numbered-entry-format>
+%     {}% <numberless-entry-format>
+%     {\dotfill\contentspage}% <filler-page-format>
+\titleformat{\chapter}{\fontsize{15}{17}\bfseries\normalfont}{\textbf{Lecture \thechapter}}{1em}{}
+\titleformat{\subsubsection}{\fontsize{10}{13}\bfseries\scshape}{\textbf{\thesubsubsection}}{1em}{}
+\setcounter{tocdepth}{4}
+% \setcounter{secnumdepth}{1}
 
 \makeatletter
 \patchcmd{\l@chapter}
@@ -100,4 +112,45 @@
 \renewcommand{\headrulewidth}{0pt}
 \lhead{}
 
+\allowdisplaybreaks
+
+%%%%%%%%%%%%%%%% COMMANDS
 \newcommand{\unl}[1]{\underline{#1}}
+\renewcommand{\vec}[1]{\unl{#1}}
+\renewcommand{\arraystretch}{1.2}
+
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\C{\mathbb{C}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\Rl{\mathsf{Re}}
+\newcommand\Iy{\mathsf{Im}}
+\newcommand\p{\partial}
+\newcommand\ifnt{\int_{-\infty}^{\infty}}
+\newcommand\ofnt{\int_{0}^{\infty}}
+\newcommand\pint{\int_0^{2\pi}}
+\newcommand\ifsum{\sum_{-\infty}^{\infty}}
+\newcommand\F{\mathcal{F}}
+\newcommand\La{\mathcal{L}}
+\newcommand\K{\mathcal{K}}
+\newcommand\om{\omega}
+\newcommand\veca{\vec{a}(\vec{r})}
+\newcommand\veru{\vec{r}(u)}
+\newcommand\vr{\vec{r}}
+\newcommand\vs{\vec{S}}
+\newcommand\va{\vec{a}}
+\newcommand\vx{\vec{x}}
+\newcommand\ve{\vec{e}}
+\newcommand\hn{\hat{n}}
+\newcommand\hr{\hat{r}}
+\newcommand\he{\hat{e}}
+\newcommand\dy{\frac{dy}{dx}}
+\newcommand\df{\frac{df}{dx}}
+\newcommand\dyy{\frac{d^2 y}{dx^2}}
+\newcommand\dff{\frac{d^2 f}{dx^2}}
+\newcommand\dz{\frac{df}{dz}}
+\newcommand\lam{\lambda}
+\newcommand\e{\epsilon}
+\newcommand\del{\nabla}
+\newcommand\grad{\vec{\nabla}}
+\newcommand\z{\zeta}
