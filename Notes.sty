@@ -7,18 +7,21 @@
 \RequirePackage[none]{hyphenat} %removes hyphenation at end of lines
 \RequirePackage{caption}
 \RequirePackage{subcaption}
-\RequirePackage{graphics,graphicx,epsfig,ulem, booktabs} % Makes sure all graphics works
+\RequirePackage{graphics,graphicx,epsfig,ulem,booktabs} % Makes sure all graphics works
 %\RequirePackage{textgreek} % Greek Text Outside of Equations
 \RequirePackage{amssymb}
 \RequirePackage{float}
 \RequirePackage{multicol, multirow}
 \RequirePackage{enumitem}
 \RequirePackage{color, soul}
+\RequirePackage{feynmp-auto}
+\DeclareGraphicsRule{*}{mps}{*}{}
 \RequirePackage{gensymb}
 \RequirePackage{sidecap}
 \RequirePackage{cancel}
+\RequirePackage[export]{adjustbox}
 \RequirePackage{wrapfig}
-\RequirePackage[table]{xcolor}
+\RequirePackage[table, dvipsnames]{xcolor}
 \RequirePackage{pifont}
 \renewcommand{\labelitemi}{\ding{228}}
 \renewcommand{\labelitemii}{\ding{229}}
@@ -28,6 +31,10 @@
 \sidecaptionvpos{figure}{c}
 
 \RequirePackage{color}   %May be necessary if you want to color links
+
+\RequirePackage{tikz,pgfplots}
+\usetikzlibrary{positioning}
+
 \RequirePackage{hyperref}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
@@ -48,12 +55,12 @@
 \RequirePackage{etoolbox}
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
-% \titlecontents{chapter}% <section-type>
-%     [0pt]% <left>
-%     {}% <above-code>
-%     {Lecture \thecontentslabel\quad}% <numbered-entry-format>
-%     {}% <numberless-entry-format>
-%     {\dotfill\contentspage}% <filler-page-format>
+ \titlecontents{chapter}% <section-type>
+     [0pt]% <left>
+     {}% <above-code>
+     {Lecture \thecontentslabel\quad}% <numbered-entry-format>
+     {}% <numberless-entry-format>
+     {\dotfill\contentspage}% <filler-page-format>
 \titleformat{\chapter}{\fontsize{15}{17}\bfseries\normalfont}{\textbf{Lecture \thechapter}}{1em}{}
 \titleformat{\subsubsection}{\fontsize{10}{13}\bfseries\scshape}{\textbf{\thesubsubsection}}{1em}{}
 \setcounter{tocdepth}{4}
@@ -116,13 +123,14 @@
 
 %%%%%%%%%%%%%%%% COMMANDS
 \newcommand{\unl}[1]{\underline{#1}}
-\renewcommand{\vec}[1]{\unl{#1}}
+%\renewcommand{\vec}[1]{\unl{#1}}
 \renewcommand{\arraystretch}{1.2}
 
 \newcommand\R{\mathbb{R}}
 \newcommand\N{\mathbb{N}}
 \newcommand\C{\mathbb{C}}
 \newcommand\Z{\mathbb{Z}}
+\newcommand\Q{\mathbb{Q}}
 \newcommand\Rl{\mathsf{Re}}
 \newcommand\Iy{\mathsf{Im}}
 \newcommand\p{\partial}
@@ -133,24 +141,39 @@
 \newcommand\F{\mathcal{F}}
 \newcommand\La{\mathcal{L}}
 \newcommand\K{\mathcal{K}}
+\newcommand\B{\unl{\mathbf{B}}}
+\newcommand\E{\unl{\mathbf{E}}}
+\newcommand\He{\unl{\mathbf{H}}}
 \newcommand\om{\omega}
 \newcommand\veca{\vec{a}(\vec{r})}
 \newcommand\veru{\vec{r}(u)}
 \newcommand\vr{\vec{r}}
 \newcommand\vs{\vec{S}}
 \newcommand\va{\vec{a}}
+\newcommand\vp{\vec{p}}
 \newcommand\vx{\vec{x}}
 \newcommand\ve{\vec{e}}
 \newcommand\hn{\hat{n}}
 \newcommand\hr{\hat{r}}
 \newcommand\he{\hat{e}}
 \newcommand\dy{\frac{dy}{dx}}
+\newcommand\dd{\frac{d}{dx}}
 \newcommand\df{\frac{df}{dx}}
 \newcommand\dyy{\frac{d^2 y}{dx^2}}
+\newcommand\ddd{\frac{d^2}{dx^2}}
 \newcommand\dff{\frac{d^2 f}{dx^2}}
 \newcommand\dz{\frac{df}{dz}}
+\newcommand\hp{\hat{p}}
+\newcommand\hx{\hat{x}}
+\newcommand\ha{\hat{a}}
+\newcommand\hh{\hat{H}}
+\newcommand\ho{\hat{O}}
+\newcommand\hog{\hat{O}^\dagger}
+\newcommand\hag{\hat{a}^\dagger}
 \newcommand\lam{\lambda}
 \newcommand\e{\epsilon}
 \newcommand\del{\nabla}
 \newcommand\grad{\vec{\nabla}}
 \newcommand\z{\zeta}
+\newcommand\Ham{\mathcal{H}}
+\newcommand\id{\mathbb{I}}

@@ -1,0 +1,8 @@
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/Arch Linux)  (format=luatex 2019.2.18)  18 FEB 2019 17:03
+ system commands enabled.
+**\def\tikzexternalrealjob{fineman}\input{fineman}
+(./fineman.tex
+! Undefined control sequence.
+l.1 \documentclass
+                [a4paper,11pt]{article}
+!  ==> Fatal error occurred, no output PDF file produced!
