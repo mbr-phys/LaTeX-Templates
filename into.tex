@@ -1,0 +1,329 @@
+\documentclass[a4paper]{article}
+
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry} 
+%define margin sizes
+\usepackage{graphics,graphicx,float} %import figures etc
+\usepackage[table,dvipsnames]{xcolor} %extra color options
+\usepackage{multicol} %extra column customisation
+\usepackage{enumitem,pifont} %for list customisation
+\usepackage{mathtools,esint} %good maths environments for equations
+\usepackage{hyperref} %create hyperlinks inside the document
+\usepackage{listings} %type out source code 
+
+\title{A Short Introduction to \LaTeX}
+\author{Matthew Rossetter \\ \\ mbr-phys@protonmail.com}
+\date{}
+
+\begin{document}
+\maketitle
+
+\textbf{Foreword:} This document is intended as a short introduction to compiling documents in the powerful and versatile typesetting program, \LaTeX. 
+This won't cover everything that can be done with \LaTeX, but it will try to touch on most common areas used. 
+The ease of \LaTeX\, is that there are numerous online resources to help you if there are any issues you come across. 
+Some that I find particularly useful are the \href{https://en.wikibooks.org/wiki/LaTeX}{Wikibooks series} on \LaTeX, and the \href{https://www.overleaf.com/learn}{Overleaf/ShareLaTeX guides}.
+The \href{https://tobi.oetiker.ch/lshort/lshort.pdf}{Not So Short Introduction to \LaTeX $2\epsilon$} is another useful resource to keep in mind. 
+
+For examples of \LaTeX\, documents, both as source code and compiled pdfs, \href{https://www.overleaf.com/}{Overleaf} is most useful. 
+You can also find some specific examples, such as lecture notes and lab reports, on my personal github page, \href{https://github.com/mbr-phys}{mbr-phys}.
+
+\section{How do I run \LaTeX?}
+To use \LaTeX, you need to have a valid \LaTeX\, distribution installed on your computer. 
+For more details on installing \LaTeX\, for your Operating System, see \href{https://www.latex-project.org/get/}{https://www.latex-project.org/get/}.
+All \LaTeX\, distributions will come with a text editor from which you write and compile your documents, although most flexible text editors used for multiple programming languages will have packages you can install to run \LaTeX\, from them if you prefer, e.g. I find \href{atom.io}{Atom} to be a nice text editor with many \href{https://atom.io/packages/search?q=latex}{packages} for running \LaTeX.
+
+Alternatively, you may find it simpler at first to sign up to \href{https://www.overleaf.com/}{Overleaf}, an online \LaTeX\, compiler which contains everything you need to start typesetting, including extensive tutorials and guides as mentioned above. 
+Using Overleaf has some obvious benefits, such as auto-saving your documents, collaborations of joint documents, and ease of use. 
+There are also templates for all sorts of documents uploaded to Overleaf, from scientific journal entries to posters and presentations.
+However, it is not always as versatile as having a \TeX\, distribution installed on your computer, as well of course as always needing an internet connection and some features being locked behind a pay wall. 
+
+In general, I find it best to have a working distribution installed as well as an Overleaf account (the free one, of course!)
+This allows you to access all the convenience found in Overleaf, but you can then download what you need and run on your computer to allow for more flexibility in how you compile. 
+I would recommend working through an installed distribution foremost and then looking to Overleaf when you need its extra convenience, but there is no right way to use \LaTeX - use it whichever way you most prefer.
+
+\section{Building your first document}
+Now that you have installed a \TeX\, distribution on your computer or set up Overleaf, it is time to build your first document. 
+To create a new document for \LaTeX, you want to open a new file in whichever text editor you have chosen.
+The new file should have the extension \lstinline[language=TeX]!.tex! to identify it as for \LaTeX.
+Some editors will do this for you automatically; others will require you to define it yourself. 
+
+There are three commands which set out the structure of your \lstinline[language=TeX]!.tex! file:
+\newpage
+\begin{lstlisting}[language=TeX]
+    \documentclass[options]{class}
+    
+    \begin{document}
+
+    \end{document}
+\end{lstlisting}
+Let's take a look at what all this means:
+\begin{itemize}
+    \item \lstinline[language=TeX]!\documentclass[options]{class}! is always the very first command entered into a \lstinline[language=TeX]!.tex! document. 
+        This command defines what sort of \textit{class} you want your document to be; \lstinline[language=TeX]!report!, \lstinline[language=TeX]!article!, and \lstinline[language=TeX]!book! are examples of common classes used. 
+        The class will change some properties of the documents, such as if you want to include chapters and parts as larger divisions than the sections you see separating this document. 
+        The \lstinline[language=TeX]![options]! section allows you to add specifying options for each class you would use, e.g. paper/font size and one/two columns.
+        For example, for this document, my first line reads \lstinline[language=TeX]!\documentclass[a4paper]{article}!.
+
+        The \textit{article} class tends to be the most commonly-used and versatile class to start from, but it will depend on what you aim to do with your document.
+        The links mentioned in the Foreword all contain more detailed descriptions of classes and options you can choose. 
+    \item The part between \lstinline[language=TeX]!\documentclass[options]{class}! and \lstinline[language=TeX]!\begin{document}! is known as the \textit{preamble}.
+        This section is used for commands which will affect the entire document; here you will write any customisations you want for your document, e.g. margin size.
+        You may need to call in packages not built in to the basic \LaTeX\, environment in order to do certain things such as include graphics or customise colouring. 
+        My preamble is shown below:
+        \lstinputlisting[language=TeX,lastline=18]{into.tex}
+        Here, you can see packages I have called in order to customise the document, with descriptioons of each one commented beside it; notice how the comment symbol in \LaTeX\, is \%.
+        Most packages you will need are installed with most \TeX\, distributions; see Section 7 for more information on packages and how to install additional ones. 
+        I have also defined how the title of the document will look, which is then put into the document by the \lstinline[language=TeX]!\maketitle! command.
+    \item \lstinline[language=TeX]!\begin{document}! defines the beginning of the document itself. 
+        It is after this command that you enter the text (and equations and figures, etc) that will become the compiled document. 
+        The final command of the document is then \lstinline[language=TeX]!\end{document}!. 
+        This marks the end of your text for the document and signals the compiling program to stop.
+\end{itemize}
+So now you should be able to type out a basic \lstinline[language=TeX]!.tex! file with the above ingredients, but how do you compile this \lstinline[language=TeX]!.tex! file into a pdf document?
+
+Compiling a document will usually be specific to the text editor you are using, but most follow the same pattern and make it obvious enough. 
+If you are using Overleaf, this will automatically compile your document as you save the file.
+Many text editors will have clear buttons saying "Run" or "Compile" that will build your document for you, although some may work on a keyboard shortcut such as \lstinline!Ctrl-Shift-b!. 
+If it isn't clear how to compile from the text editor you are using, there should be clear guides on the editor's website and elsewhere on the internet. 
+
+If you are comfortable using Command Line/Terminal, then you can also compile your document by navigating to the folder containing your \lstinline[language=TeX]!.tex! file and entering the command `\lstinline!pdflatex document.tex!', where \lstinline!document.tex! is the name your file. 
+
+\section{Document Structure and General Typesetting}
+Once you are able to create and compile simple documents in \LaTeX, you will want to begin customising your document to your image. 
+The first point in customisation is setting your document class for your need.
+Different classes will provide different functions, with different document divisions as well, as mentioned previously. 
+For class options, see for example \href{https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes}{Wikibooks}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|p{4cm}||l|p{2.5cm}}
+        \hline\hline
+        \multicolumn{2}{c||}{\bfseries Document Classes} & \multicolumn{2}{c}{\bfseries Document Divisions} \\
+        \hline\hline
+        Class & Description & Division & Comment \\
+        \hline\hline
+        article & for short reports, general notes, etc & \lstinline!\part{}! & not in letter \\
+        report & for longer reports, theses, lectures & \lstinline!\chapter{}! & only books and reports \\
+        book & for real books & \lstinline!\section{}! & not in letter \\
+        memoir & based off book, but with more flexibility & \lstinline!\subsection{}! & not in letters \\
+        letter & writing letters & \lstinline!\subsection{}! & not in letters \\
+        beamer & writing presentations, see online resources & \lstinline!\subsubsection{}! & not in letters \\
+        slides & for slides, using big letters & \lstinline!\paragraph{}! & not in letters \\
+        proc & similar to article, designed for \textit{proceedings} & \lstinline!\subparagraph{}! & not in letters \\
+        \hline\hline
+    \end{tabular}
+    \caption{\label{tab:class} A summary of popular classes and the document divisions ranked from largest to smallest.}
+\end{table}
+If you want a table of contents for your document, this can be called by using \lstinline!\tableofcontents!.
+Further customisation of the table of contents, e.g. how far down the rank of divisions it lists, is possible through packages such as titletoc, which can also customise how divisions look within the document as well. (In addition, see titlesec.)
+
+A common customisation is changing the margin size. 
+The default margins in \LaTeX\,are very large, so it is quite common to loosen these when drafting certain documents. 
+An example of how this is done using the geometry package is in Section 2. 
+
+The default font of \LaTeX\,is Computer Modern, a font designed specifically for use in \TeX\,packages. 
+However if you want to use another font, this can be done through several methods. 
+See for example the \href{https://tug.org/FontCatalogue/}{\LaTeX\,Font Catalogue} or \href{https://www.ee.iitb.ac.in/~trivedi/LatexHelp/latexfont.htm}{this example} for font options and instructions on setting them.
+
+There are plenty other miscellaneous options for general formatting. 
+Most likely, if there is something you wish to change about the structure/style of your document, there is a way to do it. 
+The online resources mentioned in the Foreword will likely have many of them, and if not, searching your problem on the internet almost always brings a solution. 
+Usually \href{https://tex.stackexchange.com/}{\TeX\,StackExchange} is the best place to find the modifications you're looking for (but not the droids).
+
+\section{Maths}
+Creating equations in Microsoft Word can be pretty tedious, so \LaTeX\,comes to the rescue yet again with what is frequently a intuitive and simple way of typesetting equations as part of natural documents. 
+In fact, Microsoft Word now supports writing equations using \LaTeX\,syntax due to how convenient it can be. 
+
+It is possible to make equations in the plain \LaTeX\,document, although only really if you're making the simplest equations. 
+For most mathematical needs, it is much easier to load a package which introduces the full utility of typesetting maths in \LaTeX. 
+The traditional package to load is amsmath, but one can alternatively use mathtools which itself loads amsmath and then fixes some of the slight issues with the former package.
+In Section 2, you will have seen how I loaded in the mathtools package just as any other package (I also loaded esint alongside it, which is just for extra integral options I use below). 
+
+So let's look at an equation and how we would write this out.
+For a good example, I write out the time-independent Schr\"{o}dinger equation, which reads
+\begin{equation}\label{eq:schroeq}
+    -\frac{\hbar^2}{2m}\nabla^2\Psi + V(\Psi)\Psi = E\Psi.
+\end{equation}
+In my \lstinline!.tex! file, this is written as
+\begin{lstlisting}
+\begin{equation}\label{eq:schroeq}
+    -\frac{\hbar^2}{2m}\nabla^2\Psi + V(\Psi)\Psi = E\Psi.
+\end{equation}
+\end{lstlisting}
+Hopefully not too complicated. 
+Every mathematical symbol you could think of has a relatively intuitive form in \LaTeX. 
+You can see that some are simply keyboard symbols, such as \lstinline!^! for raising to the power, and some are written, such as \lstinline!\Psi! and similarly for all greek letters.
+The label command is for proper referencing through a document, which will be explained in Section 9.
+
+The equation environment used automatically numbers the equations, as seen to the right.
+The numbering can be removed by using \lstinline!\begin{equation*}...\end{equation*}! instead.
+If we want to group several equations together, there are different environments than equation to do this, such as align - which I show for the definition of a Laurent series:
+\begin{align}
+    \label{eq:laurent} f(z) &= \sum_{n=-\infty}^{\infty} a_n(z-z_0)^n, \\
+    \label{eq:an} a_n &= \frac{1}{2\pi i}\oint_C \frac{f(z)}{(z-z_0)^{n+1}}dz.
+\end{align}
+This was written as
+\begin{lstlisting}
+\begin{align}
+    \label{eq:laurent} f(z) &= \sum_{n=-\infty}^{\infty} a_n(z-z_0)^n, \\
+    \label{eq:an}a_n &=\frac{1}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}dz.
+\end{align}
+\end{lstlisting}
+Again, we can see simple ways of writing out complicated expressions and symbols, where the `\&' symbol next to `=' on both lines works as an `alignment tab', i.e. the two equations will be arranged such that their alignment is centered on these tabs. 
+
+The above examples of maths in \LaTeX\,are called `display' environments - they remove themselves from the surrouding block text to display their contents. 
+We can also use `inline' maths if we want to write small equations inline with the block text. 
+For example, we could write Gauss' Law, $\Phi_E = \frac{Q}{\epsilon_0} = \oiint_S \mathbf{E}\cdot d\mathbf{A}$, using \lstinline!$\Phi_E = \frac{Q}{\epsilon_0} = \oiint_S \mathbf{E}\cdot d\mathbf{A}$!.
+So to write equations inline with the text, we use \$...\$ around our equation. 
+
+For a full summary of maths environments, such as equation above, and symbols, I find the Wikibooks pages \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{Mathematics} and \href{https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics}{Advanced Mathematics} particularly useful.
+
+\section{Lists}
+Lists can sometimes seem to have a mind of their own in Microsoft Word. 
+The power of \LaTeX, where you have seen already that we can put everything in clear environments with a beginning and an end, allows you to fully control your lists, and customise them to your liking. 
+We add the package enumitem in the preamble for extra customisation, and pifont for new symbols below.
+Let's look at a few lists and their differences, based on my reasons not to like sand:
+\begin{multicols}{2}
+\begin{itemize}
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{itemize}
+\columnbreak
+\begin{lstlisting}
+\begin{itemize}
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{itemize}
+\end{lstlisting}
+\end{multicols}
+This is just a straight-forward list with no modifications. 
+For certain purposes, it can be fine, although you will notice that the separation between points is a bit large. 
+Let's add some:
+\begin{multicols}{2}
+\begin{itemize}[noitemsep]
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{itemize}
+\columnbreak
+\begin{lstlisting}
+\begin{itemize}[noitemsep]
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{itemize}
+\end{lstlisting}
+\end{multicols}
+Now we have the same list, with its items much tighter together. 
+In my opinion, that looks nicer, although it is quite close. 
+If you want something inbetween the two above, you could instead use the option \lstinline![itemsep=5mm]! for example. 
+We can also change from a standard bullet point as it suits as:
+\begin{multicols}{2}
+\begin{itemize}[label=\ding{228}]
+    \item It's coarse
+    \item[\ding{229}] It's rough
+    \item It's irritating
+    \item[-] It gets everywhere
+\end{itemize}
+\columnbreak
+\begin{lstlisting}
+\begin{itemize}[label=\ding{228}]
+    \item It's coarse
+    \item[\ding{229}] It's rough
+    \item It's irritating
+    \item[-] It gets everywhere
+\end{itemize}
+\end{lstlisting}
+\end{multicols}
+We have defined a common label for the whole environment in the square brackets, but we have also overwritten that by using square brackets on the \lstinline!\item! itself.
+The term \lstinline!\ding{228}! is provided by the pifont package. 
+You can check yourself what other symbols you can load in from this. 
+There are still many more options you can use to customise lists, but these are usually the most common. 
+We can also include lists within lists:
+\begin{multicols}{2}
+    \begin{itemize}[nosep]
+    \item Sand:
+        \begin{itemize}[nosep]
+        \item It's coarse
+        \item It's rough
+        \item It's irritating
+        \item It gets everywhere
+    \end{itemize}
+    \item Here:
+        \begin{itemize}[nosep]
+        \item Everything is soft
+        \item Everything is smooth
+    \end{itemize}
+\end{itemize}
+\columnbreak
+\begin{lstlisting}
+\begin{itemize}[nosep]
+    \item Sand:
+    \begin{itemize}[nosep]
+        \item It's coarse
+        \item It's rough
+        \item It's irritating
+        \item It gets everywhere
+    \end{itemize}
+    \item Here:
+    \begin{itemize}[nosep]
+        \item Everything is soft
+        \item Everything is smooth
+    \end{itemize}
+\end{itemize}
+\end{lstlisting}
+\end{multicols}
+We can keep putting lists inside other lists as far down as needed. 
+In this example as well, we can see the more extreme version of noitemsep in nosep, which removes al separations to make the list very compressed.
+
+What if we want a different type of list?
+There are other environments we can use instead of itemize to express our hatred for sand:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{enumerate}
+\columnbreak
+\begin{lstlisting}
+\begin{enumerate}
+    \item It's coarse
+    \item It's rough
+    \item It's irritating
+    \item It gets everywhere
+\end{enumerate}
+\end{lstlisting}
+\end{multicols}
+So we now have the enumerate environment which will give us numbered lists.
+There are other list environments to suit your needs which can be found through the package documentations and resources listed throughout this paper. 
+
+All of the customisation options for lists can also be defined for the entire document through commands in the preamble; the same options can be used for enumerate and any others as for itemize.
+\href{https://texblog.org/2008/10/16/lists-enumerate-itemize-description-and-how-to-change-them/}{This website} provides an overview of all this.
+
+\section{Tables and Figures}
+
+\section{Useful packages}
+As you get more comfortable with the program, package documentation files become very useful for explaining how to better use each package. 
+All these files are stored on \href{https://ctan.org/}{CTAN}, where you can also download and install new packages when needed. 
+
+\section{.sty files}
+
+\section{Labels and References}
+
+\section{Drawing in Tikz and PGF}
+(Only small mention of this, let's not confuse them)
+
+
+
+
+
+
+
+
+\end{document}
+
