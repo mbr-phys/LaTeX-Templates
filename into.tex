@@ -38,7 +38,7 @@ There are also templates for all sorts of documents uploaded to Overleaf, from s
 However, it is not always as versatile as having a \TeX\, distribution installed on your computer, as well of course as always needing an internet connection and some features being locked behind a pay wall. 
 
 In general, I find it best to have a working distribution installed as well as an Overleaf account (the free one, of course!)
-This allows you to access all the convenience found in Overleaf, but you can then download what you need and run on your computer to allow for more flexibility in how you compile. 
+This allows you to access all the convenience of Overleaf, but you can then download what you need and run on your computer to allow for more flexibility in how you compile. 
 I would recommend working through an installed distribution foremost and then looking to Overleaf when you need its extra convenience, but there is no right way to use \LaTeX - use it whichever way you most prefer.
 
 \section{Building your first document}
@@ -60,7 +60,7 @@ Let's take a look at what all this means:
 \begin{itemize}
     \item \lstinline[language=TeX]!\documentclass[options]{class}! is always the very first command entered into a \lstinline[language=TeX]!.tex! document. 
         This command defines what sort of \textit{class} you want your document to be; \lstinline[language=TeX]!report!, \lstinline[language=TeX]!article!, and \lstinline[language=TeX]!book! are examples of common classes used. 
-        The class will change some properties of the documents, such as if you want to include chapters and parts as larger divisions than the sections you see separating this document. 
+        The class will change some properties of the documents, such as if you want to include chapters and larger divisions than the sections you see separating this document (see Section 3). 
         The \lstinline[language=TeX]![options]! section allows you to add specifying options for each class you would use, e.g. paper/font size and one/two columns.
         For example, for this document, my first line reads \lstinline[language=TeX]!\documentclass[a4paper]{article}!.
 
@@ -71,7 +71,7 @@ Let's take a look at what all this means:
         You may need to call in packages not built in to the basic \LaTeX\, environment in order to do certain things such as include graphics or customise colouring. 
         My preamble is shown below:
         \lstinputlisting[language=TeX,lastline=19]{into.tex}
-        Here, you can see packages I have called in order to customise the document, with descriptioons of each one commented beside it.
+        Here, you can see packages I have called in order to customise the document, with descriptions of each one commented beside it.
         Notice how the comment symbol in \LaTeX\, is \%.
         Most packages you will need are installed with most \TeX\, distributions; see Section 7 for more information on packages and how to install additional ones. 
         I have also defined how the title of the document will look, which is then put into the document by the \lstinline[language=TeX]!\maketitle! command.
@@ -79,19 +79,21 @@ Let's take a look at what all this means:
         It is after this command that you enter the text (and equations and figures, etc) that will become the compiled document. 
         The final command of the document is then \lstinline[language=TeX]!\end{document}!. 
         This marks the end of your text for the document and signals the compiling program to stop.
+    \item As a quick remark, it is good practice in your text editor to start every new sentence on a new line. 
+        \LaTeX\,doesn't distinguish create new paragraphs unless you skip a line out entirely, so it can be useful for when you come to edit things later if each sentence is on its own line so you find each one easily. 
 \end{itemize}
 So now you should be able to type out a basic \lstinline[language=TeX]!.tex! file with the above ingredients, but how do you compile this \lstinline[language=TeX]!.tex! file into a pdf document?
 
 Compiling a document will usually be specific to the text editor you are using, but most follow the same pattern and make it obvious enough. 
 If you are using Overleaf, this will automatically compile your document as you save the file.
-Many text editors will have clear buttons saying "Run" or "Compile" that will build your document for you, although some may work on a keyboard shortcut such as \lstinline!Ctrl-Shift-b!. 
+Many text editors will have clear buttons saying ``Run" or ``Compile" that will build your document for you, although some may work on a keyboard shortcut such as \lstinline!Ctrl-Shift-b!. 
 If it isn't clear how to compile from the text editor you are using, there should be clear guides on the editor's website and elsewhere on the internet. 
 
-If you are comfortable using Command Line/Terminal, then you can also compile your document by navigating to the folder containing your \lstinline[language=TeX]!.tex! file and entering the command `\lstinline!pdflatex document.tex!', where \lstinline!document.tex! is the name your file. 
+If you are comfortable using Command Line/Terminal, then you can also compile your document by navigating to the folder containing your \lstinline[language=TeX]!.tex! file and entering the command `\lstinline!pdflatex document.tex!', where \lstinline!document.tex! is the name of your file. 
 
 \section{Document Structure and General Typesetting}
 Once you are able to create and compile simple documents in \LaTeX, you will want to begin customising your document to your image. 
-The first point in customisation is setting your document class for your need.
+The first point in customisation is setting your document class for your needs.
 Different classes will provide different functions, with different document divisions as well, as mentioned previously. 
 For class options, see for example \href{https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes}{Wikibooks/Document Structure}.
 \begin{table}[H]
@@ -131,7 +133,7 @@ The online resources mentioned in the Foreword will likely have many of them, an
 Usually \href{https://tex.stackexchange.com/}{\TeX\,StackExchange} is the best place to find the modifications you're looking for (but not the droids).
 
 \section{Maths}
-Creating equations in Microsoft Word can be pretty tedious, so \LaTeX\,comes to the rescue yet again with what is frequently a intuitive and simple way of typesetting equations as part of natural documents. 
+Creating equations in Microsoft Word can be pretty tedious, so \LaTeX\,comes to the rescue yet again with what is often a intuitive and simple way of typesetting equations as part of natural documents. 
 In fact, Microsoft Word now supports writing equations using \LaTeX\,syntax due to how convenient it can be. 
 
 It is possible to make equations in the plain \LaTeX\,document, although only really if you're making the simplest equations. 
@@ -202,7 +204,7 @@ Let's look at a few lists and their differences, based on my reasons not to like
 \end{multicols}
 This is just a straight-forward list with no modifications. 
 For certain purposes, it can be fine, although you will notice that the separation between points is a bit large. 
-Let's add some:
+Let's see if we can change that separation:
 \begin{multicols}{2}
 \begin{itemize}[noitemsep]
     \item It's coarse
@@ -223,7 +225,7 @@ Let's add some:
 Now we have the same list, with its items much tighter together. 
 In my opinion, that looks nicer, although it is quite close. 
 If you want something inbetween the two above, you could instead use the option \lstinline![itemsep=5mm]! for example. 
-We can also change from a standard bullet point as it suits as:
+We can also change from a standard bullet point as it suits us:
 \begin{multicols}{2}
 \begin{itemize}[label=\ding{228}]
     \item It's coarse
@@ -301,7 +303,7 @@ There are other environments we can use instead of itemize to express our hatred
 \end{enumerate}
 \end{lstlisting}
 \end{multicols}
-So we now have the enumerate environment which will give us numbered lists.
+Thus we introduce the enumerate environment which will give us numbered lists.
 There are other list environments to suit your needs which can be found through the package documentations and resources listed throughout this paper. 
 
 All of the customisation options for lists can also be defined for the entire document through commands in the preamble; the same options can be used for enumerate and any others as for itemize.
@@ -312,7 +314,7 @@ It is important when typesetting to be able to include tables and figures in a d
 \LaTeX\,is here to help yet again. 
 Using its commands for figure management, you can fully specify where in a document an image goes, how big it is, how much it disrupts the flow of the text, and anything else you can think of. 
 You will have seen again in my preamble in Section 2 that I called in packages for use with figures: \colorbox{lightgray}{graphics}, \colorbox{lightgray}{graphicx}, and \colorbox{lightgray}{float}. 
-There are many packages which handle different things for figures, but at minimum I always recommend importing these three to make sure pretty much everything handles exactly as you want it.  
+There are many packages which handle different things for figures, but as a minimum I always recommend importing these three to make sure pretty much everything handles exactly as you want it.  
 Let's put an image into the document and take a look at how it was done:
 \begin{figure}[H]
     \centering
@@ -407,14 +409,14 @@ So what is this input saying?
                 Notice that this uses curly brackets, not square ones, which indicates this is not optional and must be called when using tabular. 
                 Each letter indicates a column for your table, and the \lstinline!|! indicates a line between adjacent columns. 
                 So this command defines how many columns your table will have, and where, if any, there will be separating lines. 
-            \item The letters themselves indicating the text alignment of the column: `l' represents left alignment, as you can see in the first column of the table, so everything is aligned to the left; `c' represents center alignment, as I've done with the other columns in the table. 
+            \item The letters themselves indicate the text alignment of the column: `l' represents left alignment, as you can see in the first column of the table, so everything is aligned to the left; `c' represents center alignment, as I've done with the other columns in the table. 
                 There are other letters, such as `r' for right alignment, which can be used here. 
                 Further alignment letters can be found for example at \href{https://en.wikibooks.org/wiki/LaTeX/Tables}{Wikibooks/Tables.}
             \item Now we properly move into the tabular environment. The command \lstinline!\hline! should be clear that it generates a horizontal line across the top of whichever row it is called on. 
                 Here I have called this twice, which is simply a style choice. 
             \item We then work our way across each row defining what goes in each column. 
                 The \lstinline!&! symbol is again used as an `alignment tab', here separating the columns on each row. 
-            \item At the end of each row, we use \lstinline!\\! to indicate we are moving to a new row, and then we can continue this pattern for as many rows as our table needs - we saw this before to make a new lign in the align environment for maths.  
+            \item At the end of each row, we use \lstinline!\\! to indicate we are moving to a new row, and then we can continue this pattern for as many rows as our table needs - we saw this before to make a new line in the align environment for maths.  
                 This command can be used in blocks of text as well to jump to a new line if needed.
         \end{itemize}
 \end{itemize}
@@ -422,7 +424,7 @@ That is the basics for creating figures and tables in \LaTeX.
 These environments are incredibly powerful and there is much more you can do with them than shown here, but these examples should guide you through your early documents. 
 The online resources referenced throughout the text all have more documentation on the more advanced implementations of these environments should you need them. 
 
-\section{Useful packages}
+\section{Useful Packages}
 This section will contain a list of packages that are commonly used, with a short description of what they provide. 
 Some may be almost necessary for use in every document you create, others may be needed on a case-by-case basis. 
 \begin{description}[align=right,labelwidth=3cm]
@@ -433,7 +435,7 @@ Some may be almost necessary for use in every document you create, others may be
     \item[\colorbox{lightgray}{graphics,graphicx,epsfig}] accomodates the full functioning of graphics, figures, and images 
     \item[\colorbox{lightgray}{float}] improves placement of figures and tables throughout the document
     \item[\colorbox{lightgray}{color,xcolor}] adds additional colour commands 
-    \item[\colorbox{lightgray}{hyperref}] hyperlink management 
+    \item[\colorbox{lightgray}{hyperref,cleverref}] hyperlink and labelling management 
     \item[\colorbox{lightgray}{pifont}] call in extra symbols for style 
     \item[\colorbox{lightgray}{titlesec,titletoc}] controls the appearance of section (etc) titles in the document and table of contents
     \item[\colorbox{lightgray}{fancyhdr}] further editing of headers and footers
@@ -548,7 +550,7 @@ The Wikibooks \LaTeX\,pages,\href{https://en.wikibooks.org/wiki/LaTeX}
 Overleaf's \LaTeX\,guides,\href{https://www.overleaf.com/learn}
     {https://www.overleaf.com/learn}.
 \bibitem{c}
-My github page, \href{https://github.com/mbr-phys}{mbr-phys}.
+My GitHub page, \href{https://github.com/mbr-phys}{mbr-phys}.
 \bibitem{d}
 The Not So Short Introduction to \LaTeX$2\epsilon$,
     \href{https://tobi.oetiker.ch/lshort/lshort.pdf}
@@ -602,7 +604,7 @@ The Wikibooks \LaTeX\,pages,\href{https://en.wikibooks.org/wiki/LaTeX}{https://e
 \bibitem{b}
 Overleaf's \LaTeX\,guides,\href{https://www.overleaf.com/learn}{https://www.overleaf.com/learn}.
 \bibitem{c}
-My github page, \href{https://github.com/mbr-phys}{mbr-phys}.
+My GitHub page, \href{https://github.com/mbr-phys}{mbr-phys}.
 \bibitem{d}
 The Not So Short Introduction to \LaTeX$2\epsilon$,\href{https://tobi.oetiker.ch/lshort/lshort.pdf}{https://tobi.oetiker.ch/lshort/lshort.pdf}.
 \bibitem{e}
