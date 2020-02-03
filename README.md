@@ -8,10 +8,10 @@
 
 * Template and labreportstyle for lab reports
 
-* BOSJ and G1ClimaxPredictions for tournament charts
+* Intro file for LaTeX
 
 * other sty files not included with TeX install
 
-* Food and TablePlans are useful extras for uni friends
+* useful extras for uni friends
 
-* GitPushing is a useful reminder
+* GitPushing and vimtex are useful reminders

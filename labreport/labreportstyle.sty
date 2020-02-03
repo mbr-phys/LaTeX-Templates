@@ -1,0 +1,61 @@
+%%%%% Document Setup %%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{labreportstyle}[2017/12/06]
+
+\RequirePackage{microtype} % Tidies up typing formatting later
+\RequirePackage{abstract} % Sets up abstract format
+\RequirePackage{times} % Times New Roman font type
+\RequirePackage[a4paper, left=1.85cm, right=1.85cm, top=1.85cm, bottom=1.85cm]{geometry} % Defines paper size and margin length
+\RequirePackage[font=small,labelfont=bf]{caption} % Defines caption font size as 9pt and caption title bolded
+\RequirePackage{float} % Allows movement of graphics and tables
+\RequirePackage{graphics,graphicx,epsfig,ulem} % Makes sure all graphics works
+\RequirePackage{amsmath} % Adds mathematical features for equations
+\RequirePackage{amssymb}
+\RequirePackage{etoolbox} % Customise date to preferred format
+\RequirePackage[none]{hyphenat} % Stops end-of-row hyphenation
+\RequirePackage{fancyhdr} % Sets up headers etc.
+\RequirePackage{ulem} % Sets up underline system
+\RequirePackage{titlesec} % Organises Titles of Sections
+\RequirePackage[euler]{textgreek} % Greek Text Outside of Equations
+%\RequirePackage{fixltx2e} % Subscript Outside of Equations
+\RequirePackage[ddmmyyyy]{datetime} % Sets date setting, default splitter is '/'
+\RequirePackage{url} % Reference URLs
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+%%% Sort Abstract to Standard %%%
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\abstracttextfont{\normalfont}
+
+%%% Set Paragraph Spacing %%%
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0cm}
+\setlength{\textfloatsep}{1pt}
+\setlength{\intextsep}{1pt}
+% \setlength{\belowcaptionskip}{-4pt}
+
+%%% Formatting Section Titles %%%
+\renewcommand{\thesection}{\Roman{section}}
+\titlespacing\section{0pt}{1pt plus 2pt minus 2pt}{0pt plus 1pt minus 2pt}
+\titleformat{\section}{\fontsize{11}{15}\bfseries\centering}{\thesection}{1em}{}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{0pt plus 1pt minus 2pt}
+\titleformat{\subsection}{\fontsize{9}{11}\bfseries\centering}{\thesubsection}{1em}{}
+\titlespacing\subsubsection{0pt}{1pt plus 2pt minus 2pt}{0pt plus 1pt minus 2pt}
+\titleformat{\subsubsection}{\fontsize{9}{11}}{\thesubsubsection}{1em}{\underline}
+
+%%% Organise Headers %%%
+\renewcommand{\dateseparator}{-}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+%%% Define Reference Section %%%
+\def\bibsection{\section*{References}}
+
+%%% Discarded Commands %%%
+% \newcommand*{\affiliation}[1]{\gdef\@affiliation{#1}}
+% \newcommand*{\@affiliation}{}
+%\renewcommand\Dated@name{}
+% %%% Date Settings %%%
+% \patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+% \patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+% \usepackage{tabularx}
