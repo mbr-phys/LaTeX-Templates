@@ -57,20 +57,20 @@
  \titlecontents{chapter}% <section-type>
      [0pt]% <left>
      {}% <above-code>
-     {Lecture \thecontentslabel\quad}% <numbered-entry-format>
+     {\bfseries Lecture \thecontentslabel\quad}% <numbered-entry-format>
      {}% <numberless-entry-format>
      {\dotfill\contentspage}% <filler-page-format>
-\titleformat{\chapter}{\fontsize{14}{17}\bfseries\normalfont}{\textbf{Lecture \thechapter}}{1em}{}
+\titleformat{\chapter}{\fontsize{14}{17}\bfseries}{\bfseries Lecture \thechapter}{1em}{}
 \titleformat{\subsubsection}{\fontsize{10}{12}\bfseries}{\textbf{\thesubsubsection}}{1em}{}
 \setcounter{tocdepth}{0}
 % \setcounter{secnumdepth}{1}
 
-\makeatletter
-\patchcmd{\l@chapter}
-{\hfill}
-{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill}
-{}{}
-\makeatother
+%\makeatletter
+%\patchcmd{\l@chapter}
+%{\hfill}
+%{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill}
+%{}{}
+%\makeatother
 \newcommand{\RN}[1]{%
   \textup{\uppercase\expandafter{\romannumeral#1}}%
 }
@@ -80,9 +80,8 @@
 \makeatother
 
 \RequirePackage[most]{tcolorbox}
-\newcounter{example}
 \RequirePackage{xparse}
-
+\newcounter{example}
 \def\exampletext{Example} % If English
 
 \NewDocumentEnvironment{example}{ O{} }
@@ -112,6 +111,37 @@
     }
 \begin{examplebox}}
 {\end{examplebox}\endlist}
+
+\newcounter{note}
+\def\notetext{Note} % If English
+
+\NewDocumentEnvironment{note}{ O{} }
+{
+\colorlet{colnote}{violet!70!white} % Global example color
+\newtcolorbox[use counter=note]{notebox}{%
+    % Example Frame Start
+    empty,% Empty previously set parameters
+    title={\notetext: #1},% use \thetcbcounter to access the testexample counter text
+    % Attaching a box requires an overlay
+    attach boxed title to top left,
+       % Ensures proper line breaking in longer titles
+       minipage boxed title,
+    % (boxed title style requires an overlay)
+    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+    coltitle=colnote,fonttitle=\bfseries,
+    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+    % Handles box when it exists on one page only
+    overlay unbroken={\draw[colnote,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: first page
+    overlay first={\draw[colnote,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: middle page
+    overlay middle={\draw[colnote,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: last page
+    overlay last={\draw[colnote,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+\begin{notebox}}
+{\end{notebox}\endlist}
 
 
 \pagestyle{fancy}  % header
