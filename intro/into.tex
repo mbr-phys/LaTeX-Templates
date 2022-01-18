@@ -12,7 +12,7 @@
 \usepackage{tkz-diag} %custom sty for diagrams
 
 \title{A Short Introduction to \LaTeX}
-\author{Matthew Rossetter \\ \\ mbr-phys@protonmail.com}
+\author{Matthew Black \\ \\ matthewkblack@protonmail.com}
 \date{}
 
 \begin{document}
@@ -101,7 +101,7 @@ For class options, see for example \href{https://en.wikibooks.org/wiki/LaTeX/Doc
     \begin{tabular}{l|p{4cm}||l|p{2.5cm}}
         \hline\hline
         \multicolumn{2}{c||}{\bfseries Document Classes} & \multicolumn{2}{c}{\bfseries Document Divisions} \\
-        \hline\hline
+        \hline
         Class & Description & Division & Comment \\
         \hline\hline
         article & for short reports, general notes, etc & \lstinline!\part{}! & not in letter \\
@@ -357,18 +357,18 @@ The commands for making a table, however, are slightly different to those for in
 Let's look at a simple table and see what we've got:
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|c|c|l}
+    \begin{tabular}{l|c|l|l}
         \hline\hline
         \textbf{Name} & \textbf{Catalogue Number} & \textbf{Price} & \textbf{Avg. Customer Rating} \\
         \hline\hline
-        Kragsta & $904.525.87$ & £$75$ & \hfill$4.5$\ding{72} (6)\hfill \\
-        Vittsj\"{o} & $802.153.32$ & £$45$ & \hfill$4.9$\ding{72} (21)\hfill \\
-        Arkelstorp & $302.608.07$ & £$110$ & \hfill$4.8$\ding{72} (11)\hfill \\
-        Tofteryd & $401.974.86$ & £$170$ & \hfill$4.8$\ding{72} (6)\hfill \\
-        Malmsta & $602.611.84$ & £$125$ & \hfill$3.0$\ding{72} (2)\hfill \\
-        Havsta & $604.041.97$ & £$85$ & \hfill$4.7$\ding{72} (7)\hfill \\ 
-        Gamlehult & $104.343.09$ & £$60$ & \hfill$4.8$\ding{72} (4)\hfill \\
-        Gual\"{o}v & $703.403.79$ & £$40$ & \hfill$4.4$\ding{72} (7)\hfill \\
+        Kragsta & $904.525.87$ & \hspace*{5pt}£$75$ & \hspace*{45pt}$4.5$\ding{72} (6) \\
+        Vittsj\"{o} & $802.153.32$ & \hspace*{5pt}£$45$ & \hspace*{45pt}$4.9$\ding{72} (21) \\
+        Arkelstorp & $302.608.07$ & \hspace*{5pt}£$110$ & \hspace*{45pt}$4.8$\ding{72} (11) \\
+        Tofteryd & $401.974.86$ & \hspace*{5pt}£$170$ & \hspace*{45pt}$4.8$\ding{72} (6) \\
+        Malmsta & $602.611.84$ & \hspace*{5pt}£$125$ & \hspace*{45pt}$3.0$\ding{72} (2) \\
+        Havsta & $604.041.97$ & \hspace*{5pt}£$85$ & \hspace*{45pt}$4.7$\ding{72} (7) \\ 
+        Gamlehult & $104.343.09$ & \hspace*{5pt}£$60$ & \hspace*{45pt}$4.8$\ding{72} (4) \\
+        Gual\"{o}v & $703.403.79$ & \hspace*{5pt}£$40$ & \hspace*{45pt}$4.4$\ding{72} (7) \\
         \hline\hline
     \end{tabular}
     \caption{\label{tab:tables} A table of my favourite Ikea tables.}
@@ -379,17 +379,17 @@ Now we've got the table, let's look at its input again:
     \centering
     \begin{tabular}{l|c|c|c}
         \hline\hline
-        \textbf{Name} & \textbf{Catalogue Number} & \textbf{Price} & 
-        \textbf{Avg. Customer Rating} \\
+        \textbf{Name} & \textbf{Catalogue Number} & \textbf{Price}
+        & \textbf{Avg. Customer Rating} \\
         \hline\hline
-        Kragsta & $904.525.87$ & $75$ & $4.5$\ding{72} (6) \\
-        Vittsj\"{o} & $802.153.32$ & $45$ & $4.9$\ding{72} (21) \\
-        Arkelstorp & $302.608.07$ & $110$ & $4.8$\ding{72} (11) \\
-        Tofteryd & $401.974.86$ & $170$ & $4.8$\ding{72} (6) \\
-        Malmsta & $602.611.84$ & $125$ & $3.0$\ding{72} (2) \\
-        Havsta & $604.041.97$ & $85$ & $4.7$\ding{72} (7) \\ 
-        Gamlehult & $104.343.09$ & $60$ & $4.8$\ding{72} (4) \\
-        Gual\"{o}v & $703.403.79$ & $40$ & $4.4$\ding{72} (7) \\
+        Kragsta & 904.525.87 & 75 & 4.5\ding{72} (6) \\
+        Vittsj\"{o} & 802.153.32 & 45 & 4.9\ding{72} (21) \\
+        Arkelstorp & 302.608.07 & 110 & 4.8\ding{72} (11) \\
+        Tofteryd & 401.974.86 & 170 & 4.8\ding{72} (6) \\
+        Malmsta & 602.611.84 & 125 & 3.0\ding{72} (2) \\
+        Havsta & 604.041.97 & 85 & 4.7\ding{72} (7) \\ 
+        Gamlehult & 104.343.09 & 60 & 4.8\ding{72} (4) \\
+        Gual\"{o}v & 703.403.79 & 40 & 4.4\ding{72} (7) \\
         \hline\hline
     \end{tabular}
     \caption{\label{tab:tables} A table of my favourite Ikea tables.}
@@ -595,7 +595,7 @@ The most important skill you need if you are to use \LaTeX\,is the ability to us
 Through the resources I have mentioned in this text, and so many more, you are likely to find answers, explanations, and solutions to anything you wish to do with this program.
 \textbf{Your most powerful technique is that of Copy and Paste.}
 \begin{flushright}
-    -- Matthew Rossetter
+    -- Matthew Black
 \end{flushright}
 
 \begin{thebibliography}{99}
